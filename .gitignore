@@ -1,0 +1,4 @@
+*.csv
+*.bak
+prothomalo/myscraper/__pycache__/
+prothomalo/myscraper/spiders/__pycache__/
