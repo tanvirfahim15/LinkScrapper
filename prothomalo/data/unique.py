@@ -6,24 +6,26 @@ import sys
 
 # configuration
 fileMode = "w"
-filename = sys.argv[1]
 
-# Unique urls fetched
-f = csv.reader(open(filename))
-processCount = 0
-col = set([])
-for row in itertools.islice(f, 0, 3000000):
-    print(row[0])
-    col.add(row[0])
-    processCount = processCount+1
-    print(processCount)
+for i in range(1, len(sys.argv)):
+    filename = sys.argv[i]
 
-col=list(col)
-print("Total unique:"+str(col.__len__()))
+    # Unique urls fetched
+    f = csv.reader(open(filename))
+    processCount = 0
+    col = set([])
+    for row in itertools.islice(f, 0, 3000000):
+        print(row[0])
+        col.add(row[0])
+        processCount = processCount+1
+        print(processCount)
 
-# write to file
-file= open("unique_"+filename, fileMode)
-for item in col:
-    file.write(item+"\n")
-file.close()
+    col=list(col)
+    print("Total unique:"+str(col.__len__()))
+
+    # write to file
+    file= open("unique_"+filename, fileMode)
+    for item in col:
+        file.write(item+"\n")
+    file.close()
 

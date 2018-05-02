@@ -1,4 +1,9 @@
-*.csv
+
 *.bak
 prothomalo/myscraper/__pycache__/
 prothomalo/myscraper/spiders/__pycache__/
+banglanews24.com/myscraper/__pycache__/
+banglanews24.com/myscraper/spiders/__pycache__/
+bangla.bdnews24.com/myscraper/__pycache__/
+bangla.bdnews24.com/myscraper/spiders/__pycache__/
+

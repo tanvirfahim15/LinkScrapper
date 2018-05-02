@@ -53,25 +53,21 @@ class MyScrapperSpider(CrawlSpider):
                 items.append(item)
                 patterns = ["http://www.banglanews24.com/sports/news/bd/","http://www.banglanews24.com/economics-business/news/bd/","http://www.banglanews24.com/entertainment/news/bd/","http://www.banglanews24.com/national/news/bd/","http://www.banglanews24.com/international/news/bd/"]
 
-                if patterns[0] in link.url:
-                	file= open('../../data/sports.csv','a')
-			file.write(urlShortener(link.url)+"\n")
-			file.close()
-                if patterns[1] in link.url:
-                	file= open('../../data/economy.csv','a')
-			file.write(urlShortener(link.url)+"\n")
-			file.close()
-                if patterns[2] in link.url:
-                	file= open('../../data/entertainment.csv','a')
-			file.write(urlShortener(link.url)+"\n")
-			file.close()
-                if patterns[3] in link.url:
-                	file= open('../../data/bangladesh.csv','a')
-			file.write(urlShortener(link.url)+"\n")
-			file.close()
-                if patterns[4] in link.url:
-                	file= open('../../data/international.csv','a')
-			file.write(urlShortener(link.url)+"\n")
-			file.close()
+            file = None
+            if patterns[0] in link.url:
+                file= open('../../data/sports.csv','a')
+            if patterns[1] in link.url:
+                file= open('../../data/economy.csv','a')
+            if patterns[2] in link.url:
+                file= open('../../data/entertainment.csv','a')
+            if patterns[3] in link.url:
+                file= open('../../data/bangladesh.csv','a')
+            if patterns[4] in link.url:
+                file= open('../../data/international.csv','a')
+
+            if file != None:
+                file.write(urlShortener(link.url)+"\n")
+                file.close()
+
         # Return all the found items
         return items
