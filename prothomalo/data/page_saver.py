@@ -1,6 +1,6 @@
 import requests as req
 import glob
-
+import os
 
 def get_article_id(url):
     url = url[::-1]
@@ -26,6 +26,8 @@ print(files)
 
 fileMode = "w"
 directory= "pages/"
+if not os.path.exists(directory):
+        os.makedirs(directory)
 for file_ in files:
 	count = 0
 	article_type = file_.replace('unique_','').replace('.csv','')
