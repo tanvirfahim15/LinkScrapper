@@ -41,6 +41,8 @@ for file_ in files:
 	name_box = soup.find('div', attrs={'itemprop': 'articleBody'})
 	out_file = codecs.open(output_path+file_, 'w', encoding="utf-8")
 	col = {}
+	if name_box is None:
+		continue
 	vec = get_vector(name_box.text)
 	for item in vec:
 		if item in col.keys():
