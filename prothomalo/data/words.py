@@ -36,6 +36,7 @@ for file_ in glob.glob("*"):
 os.chdir('..')
 
 for file_ in files:
+	print(file_)
 	page = open(input_path+file_).read()
 	soup = BeautifulSoup(page, 'html.parser')
 	name_box = soup.find('div', attrs={'itemprop': 'articleBody'})
