@@ -7,3 +7,12 @@ banglanews24.com/myscraper/spiders/__pycache__/
 bangla.bdnews24.com/myscraper/__pycache__/
 bangla.bdnews24.com/myscraper/spiders/__pycache__/
 
+anandabazar.com/myscraper/__pycache__/
+anandabazar.com/myscraper/spiders/__pycache__/
+banglatribune/myscraper/__pycache__/
+banglatribune/myscraper/spiders/__pycache__/
+kalerkontho/myscraper/__pycache__/
+kalerkontho/myscraper/spiders/__pycache__/
+
+*.txt
+*.csv
