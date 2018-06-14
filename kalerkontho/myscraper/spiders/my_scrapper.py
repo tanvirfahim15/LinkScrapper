@@ -18,10 +18,10 @@ class MyScrapperSpider(CrawlSpider):
     name = 'my-scrapper'
     
     # The domains that are allowed (links to other domains are skipped)
-    allowed_domains = ["banglatribune.com"]
+    allowed_domains = ["kalerkantho.com"]
 
     # The URLs to start with
-    start_urls = ["http://www.banglatribune.com"]
+    start_urls = ["https://www.kalerkantho.com/"]
     
     
     # This spider has one rule: extract all (unique and canonicalized) links, follow them and parse them using the parse_items method
@@ -59,23 +59,29 @@ class MyScrapperSpider(CrawlSpider):
                 item = MyscraperItem()
                 item['link'] = link.url
                 items.append(item)
-                patterns = ["banglatribune.com/sport/news/","banglatribune.com/business/news/","banglatribune.com/entertainment/news/","banglatribune.com/country/news/","banglatribune.com/foreign/news/","banglatribune.com/tech-and-gadget/news/","banglatribune.com/literature/news/"]
+                patterns = ["kalerkantho.com/online/national/","kalerkantho.com/online/Politics/","kalerkantho.com/online/Court/","kalerkantho.com/online/world/","kalerkantho.com/online/business/","kalerkantho.com/online/sahitya/","kalerkantho.com/online/sport/","kalerkantho.com/online/entertainment/","kalerkantho.com/online/info-tech/","kalerkantho.com/online/prescription/"]
                 
                 file = None
                 if patterns[0] in link.url:
-                    file= open('../../data/sports.csv','a')
+                    file= open('../../data/national.csv','a')
                 if patterns[1] in link.url:
-                    file= open('../../data/economy.csv','a')
+                    file= open('../../data/politics.csv','a')
                 if patterns[2] in link.url:
-                    file= open('../../data/entertainment.csv','a')
+                    file= open('../../data/court.csv','a')
                 if patterns[3] in link.url:
-                    file= open('../../data/bangladesh.csv','a')
+                    file= open('../../data/world.csv','a')
                 if patterns[4] in link.url:
-                    file= open('../../data/international.csv','a')
+                    file= open('../../data/business.csv','a')
                 if patterns[5] in link.url:
-                    file= open('../../data/technology.csv','a')
-                if patterns[6] in link.url:
                     file= open('../../data/literature.csv','a')
+                if patterns[6] in link.url:
+                    file= open('../../data/sports.csv','a')
+                if patterns[7] in link.url:
+                    file= open('../../data/entertainment.csv','a')
+                if patterns[8] in link.url:
+                    file= open('../../data/tech.csv','a')
+                if patterns[9] in link.url:
+                    file= open('../../data/medical.csv','a')
 
                 if file != None:    
                     file.write(urlShortener(link.url)+"\n")
